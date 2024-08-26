@@ -198,7 +198,7 @@ router.all('/trip/:city1?/:city2?/:persons?', async (req, res) => {
 		case 'post': // to be used with React frontend intent
 			const city1 = decodeURI(req.params.city1) || 'London';
 			const city2 = decodeURI(req.params.city2) || '';
-			const persons = parseInt(req.params.persons) || 0;
+			const persons = parseInt(req.params.persons) || 2;
 
 			if (!city1 || !city2 || !persons) {
 				res.send(
