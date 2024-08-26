@@ -179,7 +179,7 @@ router.get('/errLogs', async (req, res) => {
 			query: qry,
 			table: 'ErrorLogs',
 			sortKey: 'Date',
-			sortAsc: true,
+			sortAsc: false,
 			limit: 10,
 		};
 		const results = await getCacheData(args);
@@ -267,7 +267,7 @@ router.all('/trip/:city1?/:city2?/:persons?', async (req, res) => {
 						const co2Emissions = 115 * persons * row.KmsApart;
 						rtnObj.push({
 							'Departure city': row.City1,
-							'Arrival city': row.City2,
+							'Destination city': row.City2,
 							'No. of persons': parseInt(persons),
 							'Kms apart': row.KmsApart.toLocaleString(locale),
 							'CO2 emissions (one-way)':
